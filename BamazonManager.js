@@ -152,7 +152,15 @@ function addNewProduct(){
     validate: function(value){
       if(isNaN(value) == false){return true;}
       else{return false;}
+    } }, {
+    type: "input",
+    name: "quantity",
+    message: "Quantity: ",
+    validate: function(value){
+      if(isNaN(value) == false){return true;}
+      else{return false;}
     }
+    
   }]).then(function(ans){
     connection.query('INSERT INTO Products SET ?',{
       ProductName: ans.product,
